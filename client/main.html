@@ -1,0 +1,159 @@
+<head>
+    <title>Custom Registration Tutorial</title>
+</head>
+<body>
+{{#if currentUser}}
+    {{> dashboard}}
+{{else}}
+    {{#if showLogin}}
+        {{> login}}
+    {{else}}
+        {{> register}}
+    {{/if}}
+{{/if}}
+</body>
+
+<template name="dashboard">
+    <p>You're logged in.</p>
+    <ul>
+        <li><a href="#" id="accountPageMenuItem">Account</a></li>
+        <li><a href="#" id="searchPageMenuItem">Search</a></li>
+        <li><a href="#" id="shoppingCartMenuItem">Shopping Cart</a></li>
+        <li><a href="#" id="currentOrdersMenuItem">Orders</a></li>
+    </ul>
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
+
+<template name="register">
+    <form>
+        <ul>
+            <li><input type="email" name="registerEmail"></li>
+            <li><input type="password" name="registerPassword"></li>
+            <li><input type="submit" value="Register"></li>
+            <li><a  href="#" class="loginLink">Login</a></li>
+        </ul>
+    </form>
+</template>
+
+<template name="login">
+    <form>
+        <ul>
+            <li><input type="email" name="loginEmail"></li>
+            <li><input type="password" name="loginPassword"></li>
+            <li><input type="submit" value="Login"></li>
+            <li><a href="#" class="registerLink">Register</a></li>
+        </ul>
+    </form>
+</template>
+
+<template name="accountPage">
+<!--
+ contains:
+    reset password
+    first/last name
+    list of addresses to deliver to
+    bitcoin wallet address + balance
+    uploaded pics of ID, Rec, etc.
+    account pic
+    user id
+    list of approved merchants (merchant must first approve/verify user in order to trade with them)
+
+ -->
+</template>
+
+<template name="searchPage">
+    <!--
+    Map of Area with Nearby Mobile Merchants are  (Switch to list view)
+    Search by Merchant Name
+    Search by Strain Name
+    Search by City
+    Search by GPS/Nearest
+    Filters (open now, all others added by Merchants)
+
+    Search Results
+    -->
+</template>
+
+
+
+<template name="merchantPage">
+    <!--
+    Name of Merchant
+    Hours of Operation
+    Rating
+    Nearest Dispatcher Distance
+    Menu (list of Menu Items (use KSG Objects?) (Title, Image, Description,  Price $/BTC  Add To Cart Button /Amt Box
+    Coupons List
+    Description
+    Verified You?
+    -->
+</template>
+
+<template name="shoppingCartPage">
+    <!--
+    Items in Cart List (w/number of items)
+    Edit Cart
+    Checkout Button
+    -->
+</template>
+
+<template name="checkoutPage">
+    <!--
+    Balaces list (for different cryptocurrencey addresses)
+    SubTotal, BitBuds service charge, Total
+    Pay With Buttons
+    -->
+</template>
+
+<template name="orderInfoPage">
+    <!--
+    Order Info (Merchant, Items, Item Subtotal, Total, Wallet Used)
+    Ordered, Failed, ETA/Location, Arrival Time
+    New Balances
+    Blockchain Confirmations Information
+    -->
+</template>
+
+<template name="getBitcoinsPage">
+    <!--
+    Links to localbitcoins.com, coinbase, kraken
+    as well as list of bitcoin/ether wallet addresses.
+    -->
+</template>
+
+<template name="merchantAccountPage">
+    <!--
+        Enter/Edit Merchant Title, Hours, Message, Logo, Menu, Phone Number, etc.
+    -->
+</template>
+
+<template name="messagesPage">
+
+</template>
+
+<template name="conversationPage">
+
+</template>
+
+
+<template name="mainWindow">
+    <div>{{> activePage}}</div>
+    <div>{{> advertisementBox }}</div>
+</template>
+
+<template name="inviteFriendsPage">
+
+</template>
+
+<template name="verifyLegalityPage">
+    <!--
+    This is where a merchant verifies the documentation of the buyer and flags his account to 'verified'
+    A user's account must be verified by the seller in order to buy buds from them
+    -->
+</template>
+
+<template name="imageView">
+    <!--
+    Displays the images as well as votes and comments list
+    -->
+</template>
