@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 import { Session } from 'meteor/session';
 
+
 import './main.html';
 
 Template.dashboard.events({
@@ -51,4 +52,9 @@ Template.login.events({
   }
 });
 
+
+//routes
+Router.route('/', function () {
+    this.render('Home');
+});
 
